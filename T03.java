@@ -24,8 +24,7 @@ public class T03 {
 
         do {
             iSBN = input.nextLine();
-            if (iSBN.equals("---")) {
-            } else {
+            if (!iSBN.equals("---")) {
                 judul = input.nextLine();
                 penulis = input.nextLine();
                 tahunTerbit = Integer.parseInt(input.nextLine());
@@ -64,14 +63,13 @@ public class T03 {
                             }
                         }
                     }
+                    if (kategoriDiskon.equals("Once in a lifetime") && kategori.equals("Best Pick")) {
+                        kategoriBuku = "The Ultimate Best";
+                    } else {
+                        kategoriBuku = "---";
+                    }
                 }
-                if (kategoriDiskon.equals("Once in a lifetime") && kategori.equals("Best Pick")) {
-                    kategoriBuku = "The ULtimate Best";
-                } else {
-                    kategoriBuku = "---";
-                }
-                System.out.println(iSBN + "|" + judul + "|" + penulis + "|" + tahunTerbit + "|" + penerbit + "|" + formatBukuElektronik + "|" + hargaPembelian + "|" + minimumMargin + "|" + stok + "|" + rating + "|" + kategori + "|" + kategoriDiskon + "|" + kategoriBuku);
             }
-        } while (iSBN.equals("---"));
+        } while (!iSBN.equals("---"));
     }
 }
