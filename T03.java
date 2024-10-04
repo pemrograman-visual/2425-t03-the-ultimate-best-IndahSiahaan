@@ -63,12 +63,13 @@ public class T03 {
                             }
                         }
                     }
-                    if (kategoriDiskon.equals("Once in a lifetime") && kategori.equals("Best Pick")) {
-                        kategoriBuku = "The Ultimate Best";
-                    } else {
-                        kategoriBuku = "---";
-                    }
                 }
+                if (kategoriDiskon.equals("Once in a lifetime") && kategori.equals("Best Pick")) {
+                    kategoriBuku = "The Ultimate Best";
+                } else {
+                    kategoriBuku = "---";
+                }
+                System.out.println(iSBN + "|" + judul + "|" + penulis + "|" + tahunTerbit + "|" + penerbit + "|" + formatBukuElektronik + "|" + hargaPembelian + "|" + minimumMargin + "|" + stok + "|" + rating + "|" + kategori + "|" + kategoriDiskon + "|" + kategoriBuku);
             }
         } while (!iSBN.equals("---"));
     }
