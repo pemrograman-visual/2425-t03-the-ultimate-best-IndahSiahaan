@@ -1,10 +1,7 @@
-// 12S24052 - Indah Triyuni Siahaan
-// 12S24007 - Dasmauli Sormin
-
 import java.util.*;
 import java.lang.Math;
 
-public class TO3 {
+public class JavaApplication {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
