@@ -4,7 +4,7 @@
 import java.util.*;
 import java.lang.Math;
 
-public class T03 {
+public class  T03 {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -65,7 +65,7 @@ public class T03 {
                     }
                 }
                 if (kategoriDiskon.equals("Once in a lifetime") && kategori.equals("Best Pick")) {
-                    kategoriBuku = "The Ultimate Best";
+                    kategoriBuku = "The ultimate best";
                 } else {
                     kategoriBuku = "---";
                 }
