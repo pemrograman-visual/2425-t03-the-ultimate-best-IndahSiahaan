@@ -1,8 +1,6 @@
 // 12S24052 - Indah Triyuni Siahaan
 // 12S24007 - Dasmauli Sormin
 
-import java.util.*;
-import java.lang.Math;
 
 public class T03 {
     private static Scanner input = new Scanner(System.in);
@@ -21,6 +19,7 @@ public class T03 {
         String kategori;
         String kategoriDiskon;
         String kategoriBuku;
+        double diskon;
 
         do {
             iSBN = input.nextLine();
@@ -32,13 +31,14 @@ public class T03 {
                 formatBukuElektronik = input.nextLine();
                 hargaPembelian = Double.parseDouble(input.nextLine());
                 minimumMargin = Double.parseDouble(input.nextLine());
-                if (-minimumMargin / hargaPembelian >= 0.4) {
+                diskon = minimumMargin * -1 / hargaPembelian;
+                if (diskon > 0.4) {
                     kategoriDiskon = "Once in a lifetime";
                 } else {
-                    if (-minimumMargin / hargaPembelian > 0.2) {
+                    if (diskon > 0.2 && diskon < 0.4) {
                         kategoriDiskon = "Never come twice";
                     } else {
-                        if (-minimumMargin / hargaPembelian > 0) {
+                        if (diskon <= 0.2 && diskon > 0) {
                             kategoriDiskon = "No regret";
                         } else {
                             kategoriDiskon = "---";
@@ -47,7 +47,7 @@ public class T03 {
                 }
                 stok = Integer.parseInt(input.nextLine());
                 rating = Double.parseDouble(input.nextLine());
-                if (rating >= 4.7 && rating <= 5) {
+                if (rating >= 4.7) {
                     kategori = "Best Pick";
                 } else {
                     if (rating >= 4.5 && rating < 4.7) {
@@ -69,10 +69,12 @@ public class T03 {
                 } else {
                     kategoriBuku = "---";
                 }
-                System.out.println(iSBN + "|" + judul + "|" + penulis + "|" + tahunTerbit + "|" + penerbit + "|" + formatBukuElektronik + "|" + hargaPembelian + "|" + minimumMargin + "|" + stok + "|" + rating + "|" + kategori + "|" + kategoriDiskon + "|" + kategoriBuku);
+                System.out.println(iSBN + "|" + judul + "|" + penulis + "|" + tahunTerbit + "|" + penerbit + "|" + formatBukuElektronik + "|" + hargaPembelian + "|" + minimumMargin + "|" + stok + "|" + toFixed(rating,1) + "|" + kategori + "|" + kategoriDiskon + "|" + kategoriBuku);
             }
         } while (!iSBN.equals("---"));
     }
+    
+    private static String toFixed(double value, int digits) {
+        return String.format("%." + digits + "f", value);
+    }
 }
-
-
