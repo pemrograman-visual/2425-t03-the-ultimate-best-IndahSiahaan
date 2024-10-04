@@ -4,7 +4,7 @@
 import java.util.*;
 import java.lang.Math;
 
-public class T03  {
+public class T03 {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -32,16 +32,16 @@ public class T03  {
                 formatBukuElektronik = input.nextLine();
                 hargaPembelian = Double.parseDouble(input.nextLine());
                 minimumMargin = Double.parseDouble(input.nextLine());
-                if (minimumMargin > 0) {
-                    kategoriDiskon = "---";
+                if (-minimumMargin / hargaPembelian >= 0.4) {
+                    kategoriDiskon = "Once in a lifetime";
                 } else {
-                    if (minimumMargin <= -(hargaPembelian * 40 / 100)) {
-                        kategoriDiskon = "Once in a lifetime";
+                    if (-minimumMargin / hargaPembelian > 0.2) {
+                        kategoriDiskon = "Never come twice";
                     } else {
-                        if (minimumMargin <= -(hargaPembelian * 20 / 100)) {
-                            kategoriDiskon = "Never come twice";
-                        } else {
+                        if (-minimumMargin / hargaPembelian > 0) {
                             kategoriDiskon = "No regret";
+                        } else {
+                            kategoriDiskon = "---";
                         }
                     }
                 }
@@ -74,3 +74,5 @@ public class T03  {
         } while (!iSBN.equals("---"));
     }
 }
+
+
